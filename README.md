@@ -1,35 +1,63 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Eslint install
-https://medium.com/javascript-in-plain-english/set-up-react-js-with-eslint-prettier-and-airbnb-cc015363a7
+## Eslint installment
+What is Lint or Linter❓
+It’s a parser/tool that inspects code and flags bugs, typos, or any potential mistake in the programmer’s input.👩‍💻👨‍💻 I find it especially helpful for new people to adjust new code base and developers can spot their mistakes🐞 faster and learn from it.
 
-You can install ESLint in two different ways (I prefer on specific project):
-1. Globally: npm install eslint -g
-2. On a specific project: npm install eslint --save-dev
+npm install --save-dev babel-eslint eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-react eslint-plugin-import prettier pretty-quick
 
-To initialize:
-MAC : npx eslint -init
-Windows: eslint --init
+package.json 
+in script input  "lint": "eslint src"
 
-npm i prettier eslint-config-prettier eslint-plugin-prettier -D
+## .eslintrc
 
-Use Ctrl+, shortcut or go to File ->Preferences ->Settings.
-Scroll down to Edit in settings.json . It will open your ide setting in json format :
-Tell eslint to always show its status
-Disable formatting in js file (we will format through EsLint)
-Make Prettier run on all file formats except for JavaScript
-"eslint.alwaysShowStatus": true,
-"editor.formatOnSave": true,
-"[javascript]": {
-   "editor.formatOnSave": false
- },
-"eslint.autoFixOnSave": true,
-"prettier.disableLanguages": [
-    "js"
-]
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+},
+"extends": ["airbnb", "plugin:prettier/recommended" ],
+"env": {
+    "browser": true,
+    "jest": true
+},
+"rules": {
+    "max-len": ["error", {"code": 100}],
+    "prefer-promise-reject-errors": ["off"],
+    "react/prop-types": ["warn"],
+    "no-return-assign": ["off"],
+    "react/jsx-filename-extension": [1, {
+        "extensions": [".js", ".jsx"]}
+        ]
+  }
+}
 
-Disable eslint in serviceWorker.js
-/*eslint-disable*/
+ ## .prettierrc
+
+{
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+
+## other installments
+npm install --save material-ui axios react-tap-event-plugin
+npm i prop-types
+###    routing
+npm i react-router-dom
+index.js 
+import { BrowserRouter } from 'react-router-dom';
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);
+
+
+npm install @material-ui/core
+npm install @material-ui/icons
 
 ## Available Scripts
 
