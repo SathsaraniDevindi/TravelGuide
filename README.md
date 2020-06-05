@@ -1,5 +1,36 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Eslint install
+https://medium.com/javascript-in-plain-english/set-up-react-js-with-eslint-prettier-and-airbnb-cc015363a7
+
+You can install ESLint in two different ways (I prefer on specific project):
+1. Globally: npm install eslint -g
+2. On a specific project: npm install eslint --save-dev
+
+To initialize:
+MAC : npx eslint -init
+Windows: eslint --init
+
+npm i prettier eslint-config-prettier eslint-plugin-prettier -D
+
+Use Ctrl+, shortcut or go to File ->Preferences ->Settings.
+Scroll down to Edit in settings.json . It will open your ide setting in json format :
+Tell eslint to always show its status
+Disable formatting in js file (we will format through EsLint)
+Make Prettier run on all file formats except for JavaScript
+"eslint.alwaysShowStatus": true,
+"editor.formatOnSave": true,
+"[javascript]": {
+   "editor.formatOnSave": false
+ },
+"eslint.autoFixOnSave": true,
+"prettier.disableLanguages": [
+    "js"
+]
+
+Disable eslint in serviceWorker.js
+/*eslint-disable*/
+
 ## Available Scripts
 
 In the project directory, you can run:
